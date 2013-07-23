@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block header%}
+<link rel='stylesheet' type='text/css' href="{{static_url('css/jHtmlArea.css')}}">
+<script src="{{static_url('ckeditor/ckeditor.js')}}"></script>
+{%end%}
+{%block body%}
+  <div class='container'>
+    <form class='form-horizontal' method='post'>
+      <input id='title' name='title' class='span6 post' placeholder='The blog title ...'>
+      <textarea class='post' name="blog_content">&lt;p&gt;Enter your blog ...&lt;/p&gt;</textarea>
+      <script>
+        CKEDITOR.replace( 'blog_content' );
+      </script>
+      <input id='key_words' name='key_words' class='span6 post' placeholder='Key Words, comma seprated'>
+      <br/>
+      <div class='input-prepend post'>
+        <div class='btn-group'>
+         <select name='text_type'>
+           <option name='reposted'>Reposted</option>
+           <option name='original'>Original</option>
+         </select>
+         <input class='span6 port' id='prependedDropdownButton' type='text' placeholder='The Re-posted link'>
+        </div>
+      </div>  
+      <br/>
+      <button type='submit' class='btn btn-primary post'>Post</button>
+      <button type='button' class='btn post' >Cancel</button>
+    </form>
+  </div>
+{%end%}

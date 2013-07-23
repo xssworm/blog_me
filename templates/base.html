@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+    <title>{% block title %}{{  escape(handler.settings['blog_title']) }}{% end %}</title>
+    <link rel='stylesheet' href="{{ static_url("bootstrap/css/bootstrap.css") }}" type='text/css' />
+    <link rel='stylesheet' href="{{ static_url("css/blog_me.css") }}" type='text/css' />
+    <script type='text/javascript' src="{{ static_url("bootstrap/js/bootstrap.js")}}"></script>
+    <script type='text/javascript' src="{{ static_url("js/jquery.js")}}"></script>
+    {% block header %}{% end %}
+  </head>
+  <body>
+    <div class='container'>
+      <div class='masthead'>
+        <h3 class='muted'>Blog Me</h3>
+        <div class='navbar'>
+          <div class='navbar-inner'>
+            <div class='container'>
+              <ul class='nav'>
+                <li class='active'>
+                  <a href='/home'>Home</a>
+                </li>
+                <li>
+                  <a href='#Blogs'>Blogs</a>
+                </li>
+                <li>
+                  <a href='/compose'>Compose</a>
+                </li>
+                <li>
+                  <a href='#Contact'>Contact</a>
+                </li>
+                <li>
+                  <a href="#userlogin" data-toggle='modal'>Login</a>
+                </li>
+                <li>
+                  <a href='#register'>Register</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='userlogin' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='userloginLabel' aria-hidden='true'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></button>
+        <h3>Blog user sign in</h3>
+      </div>
+      <div class='modal-body'>
+      </div>
+      <div class='modal-footer'>
+        <button type='submit' class='btn btn-primary'>Sign in</button>
+        <button type='button' class='btn' data-dismiss='modal' aria-hidden='true' >Cancel</button>
+      </div>
+    </div>
+    {%block body%}{%end%}
+  </body>
+</html>
+             
